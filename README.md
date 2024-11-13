@@ -59,6 +59,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ---
 
 **Script Output Example:**
+
 When the script runs successfully, it will display the following:
 ```python
 Starting in 1 second....
