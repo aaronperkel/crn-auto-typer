@@ -28,14 +28,27 @@ pip install pillow
 	- Log in to your account and navigate to the page where you input CRNs.
 	- Ensure that the first CRN input field is visible and accessible.
 2. Update the CRN List
-  - Edit the script to include your specific CRNs and course names:
-	```python
-	crns = [
-	    ('12007', 'CS3050 - Software Engineering'),
-	    ('12435', 'CS3930 - Computing Career Preparation'),
-	    ('15862', 'MATH3766 - Chaos,Fractals&Dynmcal Syst'),
-	    ('12568', 'NFS1053L - Basic Concepts of Foods LAB'),
-	    ('12777', 'NFS1053 - Basic Concepts of Foods')
-	]
-	```
+Edit the script to include your specific CRNs and course names:
+```python
+crns = [
+    ('12007', 'CS3050 - Software Engineering'),
+    ('12435', 'CS3930 - Computing Career Preparation'),
+    ('15862', 'MATH3766 - Chaos,Fractals&Dynmcal Syst'),
+    ('12568', 'NFS1053L - Basic Concepts of Foods LAB'),
+    ('12777', 'NFS1053 - Basic Concepts of Foods')
+]
+```
 Replace the CRNs and course names with your desired courses.
+3. Run the Script
+- Open a terminal or command prompt in the directory containing crn_auto_typer.py.
+- Run the script using the command:
+```bash
+python crn_auto_typer.py
+```
+## Disclaimer
+- Compliance with University Policies
+	- Before using this script, ensure that automating the registration process does not violate your university’s policies or terms of service.
+	•	Unauthorized automation may lead to penalties, including account suspension.
+	•	Use at Your Own Risk
+	•	This script is provided “as is” without warranty of any kind.
+	•	The author is not responsible for any consequences resulting from the use of this script.
