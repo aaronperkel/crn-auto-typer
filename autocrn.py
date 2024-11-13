@@ -7,7 +7,7 @@ import pyautogui
 import time
 
 # List of CRNs to enter
-crns = [('12007', 'CS3050 - Software Engineering'),
+CRNS = [('12007', 'CS3050 - Software Engineering'),
         ('12435', 'CS3930 - Computing Career Preparation'),
         ('15862', 'MATH3766 - Chaos,Fractals&Dynmcal Syst'),
         ('12568', 'NFS1053L - Basic Concepts of Foods LAB'),
@@ -22,7 +22,7 @@ for i in range(3, 0, -1):
     time.sleep(1)
 
 # Type each CRN and press 'Tab' to move to the next text box
-for crn in crns:
+for crn in CRNS:
     pyautogui.typewrite(crn[0])
     pyautogui.press('tab')  # Move to the next text box
     time.sleep(0.05)  # Small delay for stability
