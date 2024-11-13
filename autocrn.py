@@ -3,8 +3,8 @@ Aaron Perkel
 Course Registration CRN Auto-Typer
 """
 
-import pyautogui
 import time
+import pyautogui
 
 # List of CRNs to enter
 CRNS = [('12007', 'CS3050 - Software Engineering'),
@@ -32,5 +32,5 @@ pyautogui.press('enter')
 
 print("CRNs have been entered and the form has been submitted.")
 
-for i, crn in enumerate(crns):
+for i, crn in enumerate(CRNS):
     print(f'  {i+1}. {crn[0]} -> {crn[1]}')
