@@ -55,18 +55,3 @@ python crn_auto_typer.py
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
-
----
-
-**Script Output Example:**
-
-When the script runs successfully, it will display the following:
-```python
-Starting in 1 second....
-CRNs have been entered and the form has been submitted.
-  1. 12007 -> CS3050 - Software Engineering
-  2. 12435 -> CS3930 - Computing Career Preparation
-  3. 15862 -> MATH3766 - Chaos,Fractals&Dynmcal Syst
-  4. 12568 -> NFS1053L - Basic Concepts of Foods LAB
-  5. 12777 -> NFS1053 - Basic Concepts of Foods
-```
