@@ -30,7 +30,7 @@ pip install pillow
 2. Update the CRN List
 Edit the script to include your specific CRNs and course names:
 ```python
-crns = [
+CRNS = [
     ('12007', 'CS3050 - Software Engineering'),
     ('12435', 'CS3930 - Computing Career Preparation'),
     ('15862', 'MATH3766 - Chaos,Fractals&Dynmcal Syst'),
