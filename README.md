@@ -40,10 +40,10 @@ CRNS = [
 ```
 Replace the CRNs and course names with your desired courses.
 3. Run the Script
-- Open a terminal or command prompt in the directory containing crn_auto_typer.py.
+- Open a terminal or command prompt in the directory containing `autotyper.py`.
 - Run the script using the command:
 ```bash
-python crn_auto_typer.py
+python `autotyper.py`
 ```
 ## Disclaimer
 - Compliance with University Policies
