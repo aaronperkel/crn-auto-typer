@@ -48,7 +48,10 @@ python crn_auto_typer.py
 ## Disclaimer
 - Compliance with University Policies
 	- Before using this script, ensure that automating the registration process does not violate your university’s policies or terms of service.
-	•	Unauthorized automation may lead to penalties, including account suspension.
-	•	Use at Your Own Risk
-	•	This script is provided “as is” without warranty of any kind.
-	•	The author is not responsible for any consequences resulting from the use of this script.
+	- Unauthorized automation may lead to penalties, including account suspension.
+- Use at Your Own Risk
+	- This script is provided “as is” without warranty of any kind.
+	- The author is not responsible for any consequences resulting from the use of this script.
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
