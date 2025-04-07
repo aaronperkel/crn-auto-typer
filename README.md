@@ -14,13 +14,13 @@ The Course Registration CRN Auto-Typer is a Python script designed to automate t
  ## Prerequisites
 - Python 3.x: Ensure you have Python 3 installed on your system.
 - `pyautogui` Library: Install the `pyautogui` library for simulating keyboard input.
- ```bash
-pip install pyautogui
-```
+  ```bash
+  pip install pyautogui
+  ```
 - Pillow Library (Optional): Required for certain functionalities of pyautogui.
- ```bash
-pip install pillow
-```
+  ```bash
+  pip install pillow
+  ```
 
 ## Usage
 1. Prepare Your Environment
