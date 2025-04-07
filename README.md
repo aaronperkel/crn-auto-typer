@@ -1,57 +1,60 @@
 # Course Registration CRN Auto-Typer
+
 **Author:** Aaron Perkel
 
 ## Overview
-The Course Registration CRN Auto-Typer is a Python script designed to automate the entry of Course Registration Numbers (CRNs) into a university’s online registration form. By utilizing the `pyautogui` library, the script simulates keyboard input to quickly and efficiently input CRNs, navigate between form fields, and submit the registration form.
+This repository contains a Python script that automates the entry of Course Registration Numbers (CRNs) into an online registration form, along with a simulator HTML page for local testing. The Python script, `autocrn.py`, uses the `pyautogui` library to simulate keyboard inputs for entering CRNs and submitting the form. The `simulator.html` file mimics a course registration form, making it easy to test the automation without needing access to the actual registration page.
 
-## Features
-- Automated CRN Entry: Automatically types in a list of CRNs into the registration form.
-- Form Navigation: Uses the ‘Tab’ key to move between input fields.
-- Form Submission: Submits the form by pressing ‘Enter’ after entering all CRNs.
-- User-Friendly Countdown: Provides a countdown to allow the user to prepare before the automation begins.
-- Confirmation Output: Prints a summary of the CRNs entered and their corresponding course names.
+## Repository Structure
+- **autocrn.py** – Python script for automating CRN entry.
+- **simulator.html** – A basic HTML page simulating a registration form for testing purposes.
+- **LICENSE** – MIT License.
+- **README.md** – This file.
 
- ## Prerequisites
-- Python 3.x: Ensure you have Python 3 installed on your system.
-- `pyautogui` Library: Install the `pyautogui` library for simulating keyboard input.
+## autocrn.py
+**Purpose:**  
+Automates the process of entering CRNs by simulating keyboard actions.
+
+**Features:**
+- **Automated CRN Entry:** Simulates typing each CRN.
+- **Form Navigation:** Uses the Tab key to move between text boxes.
+- **Countdown Timer:** Provides a countdown to allow you time to focus the first input field.
+- **Automatic Submission:** Presses Enter to submit the form after all CRNs have been entered.
+
+**Usage:**
+1. Open your course registration page or use the simulator (see below).
+2. Update the CRN list in the script as needed.
+3. Run the script:
+   ```bash
+   python autocrn.py
+   ```
+
+## simulator.html
+
+**Purpose:**
+Acts as a test interface to simulate a course registration form, allowing you to see how the auto-typer interacts with a form.
+
+**Usage:**
+1. Open simulator.html in your web browser.
+2. Click on the first text box to focus.
+3. Run the autocrn.py script to automatically fill in the CRNs and submit the form.
+
+## Prerequisites
+- Python 3.x is required.
+- `pyautogui` Library:
   ```bash
   pip install pyautogui
   ```
-- Pillow Library (Optional): Required for certain functionalities of pyautogui.
+- Pillow Library (Required for some functionalities of pyautogui):
   ```bash
   pip install pillow
   ```
 
-## Usage
-1. Prepare Your Environment
-  -	Open your web browser and navigate to your university’s course registration page.
-	- Log in to your account and navigate to the page where you input CRNs.
-	- Ensure that the first CRN input field is visible and accessible.
-2. Update the CRN List
-  - Edit the script to include your specific CRNs and course names:
-  ```python
-  CRNS = [
-      ('12007', 'CS3050 - Software Engineering'),
-      ('12435', 'CS3930 - Computing Career Preparation'),
-      ('15862', 'MATH3766 - Chaos,Fractals&Dynmcal Syst'),
-      ('12568', 'NFS1053L - Basic Concepts of Foods LAB'),
-      ('12777', 'NFS1053 - Basic Concepts of Foods')
-  ]
-  ```
-Replace the CRNs and course names with your desired courses.
-3. Run the Script
-  - Open a terminal or command prompt in the directory containing `autocrn.py`.
-  - Run the script using the command:
-  ```bash
-  python `autocrn.py`
-  ```
 ## Disclaimer
-- Compliance with University Policies
-	- Before using this script, ensure that automating the registration process does not violate your university’s policies or terms of service.
-	- Unauthorized automation may lead to penalties, including account suspension.
-- Use at Your Own Risk
-	- This script is provided “as is” without warranty of any kind.
-	- The author is not responsible for any consequences resulting from the use of this script.
+- University Policy Compliance:
+  - Ensure that using this script does not violate your university’s policies or terms of service.
+- Use at Your Own Risk:
+  - This tool is provided “as is” without any warranty. The author is not responsible for any consequences arising from its use.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
