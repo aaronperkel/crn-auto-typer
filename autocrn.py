@@ -13,8 +13,10 @@ CRNS = [('12007', 'CS3050 - Software Engineering'),
         ('12568', 'NFS1053L - Basic Concepts of Foods LAB'),
         ('12777', 'NFS1053 - Basic Concepts of Foods')]
 
+DELAY = 3 # 3 second delay before typing starts
+
 # Wait for the user to click on the first text box
-for i in range(3, 0, -1):
+for i in range(DELAY, 0, -1):
     if i > 1:
         print(f"Starting in {i} seconds...", end='\r')
     else:
@@ -32,5 +34,6 @@ pyautogui.press('enter')
 
 print("CRNs have been entered and the form has been submitted.")
 
+# Prints just for sanity sake
 for i, crn in enumerate(CRNS):
     print(f'  {i+1}. {crn[0]} -> {crn[1]}')
