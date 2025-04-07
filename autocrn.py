@@ -15,25 +15,29 @@ CRNS = [('12007', 'CS3050 - Software Engineering'),
 
 DELAY = 3 # 3 second delay before typing starts
 
-# Wait for the user to click on the first text box
-for i in range(DELAY, 0, -1):
-    if i > 1:
-        print(f"Starting in {i} seconds...", end='\r')
-    else:
-        print(f"Starting in {i} second....", end='\r')
-    time.sleep(1)
+def main():
+    # Wait for the user to click on the first text box
+    for i in range(DELAY, 0, -1):
+        if i > 1:
+            print(f"Starting in {i} seconds...", end='\r')
+        else:
+            print(f"Starting in {i} second....", end='\r')
+        time.sleep(1)
 
-# Type each CRN and press 'Tab' to move to the next text box
-for crn in CRNS:
-    pyautogui.typewrite(crn[0])
-    pyautogui.press('tab')  # Move to the next text box
-    time.sleep(0.05)  # Small delay for stability
+    # Type each CRN and press 'Tab' to move to the next text box
+    for crn in CRNS:
+        pyautogui.typewrite(crn[0])
+        pyautogui.press('tab')  # Move to the next text box
+        time.sleep(0.05)  # Small delay for stability
 
-# Submit the form by pressing 'Enter'
-pyautogui.press('enter')
+    # Submit the form by pressing 'Enter'
+    pyautogui.press('enter')
 
-print("CRNs have been entered and the form has been submitted.")
+    print("CRNs have been entered and the form has been submitted.")
 
-# Prints just for sanity sake
-for i, crn in enumerate(CRNS):
-    print(f'  {i+1}. {crn[0]} -> {crn[1]}')
+    # Prints just for sanity sake
+    for i, crn in enumerate(CRNS):
+        print(f'  {i+1}. {crn[0]} -> {crn[1]}')
+        
+if __name__ == '__main__':
+    main()
