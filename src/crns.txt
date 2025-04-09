@@ -1,9 +1,7 @@
-# Enter CRNS in this file separated by a new line. Lines 
-# starting with '#' will be ignored.
+# Enter your CRNs below, one per line
+# Lines starting with # are ignored
 
-# FOR EXAMPLE:
-12007
-12435
-# 15862 <-- this will be ignored because it starts with '#'.
-12568
-12777
+12345
+67890
+24680
+13579
