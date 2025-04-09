@@ -13,7 +13,11 @@ class MyWindow(QWidget):
         self.resize(400, 200)
         layout = QVBoxLayout()
 
-        self.label = QLabel("Click below to start the auto typer.\n\nOnce you start, CLICK on the first CRN box in the add/drop/withdrawl page.\n\nYou will have 3 seconds to do so before the program begins to type.")
+        self.label = QLabel(
+            "Click the button below to start the auto typer.\n\n"
+            "After clicking Start, please click on the first CRN input box on the add/drop/withdrawal page.\n\n"
+            "You will have 3 seconds to set the focus before the program begins to type."
+        )        
         layout.addWidget(self.label)
 
         self.button = QPushButton("Start")
@@ -51,7 +55,10 @@ class MyWindow(QWidget):
         QTimer.singleShot(0, self.finish_typing)
 
     def finish_typing(self):
-        self.label.setText("CRNs have been entered and the form has been submitted.\n\nFollow me on Instagram @aaronperkel")
+        self.label.setText(
+            "CRNs have been entered and the form has been submitted.\n\n"
+            "Follow me on Instagram @aaronperkel"
+        )
         self.button.setText("Close")
         self.button.clicked.disconnect()
         self.button.clicked.connect(self.close)
