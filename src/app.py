@@ -1,11 +1,8 @@
-"""
-Aaron Perkel
-Course Registration CRN Auto-Typer w/ GUI
-"""
-
 import sys
 import typer
+import threading
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QPushButton
+from PyQt5.QtCore import QTimer
 
 DELAY = 3
 
@@ -19,17 +16,45 @@ class MyWindow(QWidget):
         self.label = QLabel("Click below to start the auto typer.")
         layout.addWidget(self.label)
 
-        self.button = QPushButton("Click Me")
+        self.button = QPushButton("Start")
         self.button.clicked.connect(self.on_button_click)
         layout.addWidget(self.button)
 
         self.setLayout(layout)
 
+        self.counter = DELAY
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self.update_countdown)
+
     def on_button_click(self):
-        for i in range(DELAY, 0, -1):
-            self.label.setText(f"Starting in {i} second{'s' if i != 1 else ''}...")
-        typer.main()
+        # If the button already says "Close", then close the app.
+        if self.button.text() == "Close":
+            self.close()
+            return
+
+        self.counter = DELAY
+        self.timer.start(1000)  # tick every 1 second
+
+    def update_countdown(self):
+        if self.counter > 0:
+            self.label.setText(f"Starting in {self.counter} second{'s' if self.counter != 1 else ''}...")
+            self.counter -= 1
+        else:
+            self.timer.stop()
+            self.label.setText("Typing...")
+            # Run typer.main() in a separate thread to keep the GUI responsive.
+            threading.Thread(target=self.run_typer, daemon=True).start()
+
+    def run_typer(self):
+        typer.main()  # This might block, so run it in a thread.
+        # Schedule finishing steps in the main thread.
+        QTimer.singleShot(0, self.finish_typing)
+
+    def finish_typing(self):
         self.label.setText("CRNs have been entered and the form has been submitted.")
+        self.button.setText("Close")
+        self.button.clicked.disconnect()
+        self.button.clicked.connect(self.close)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
