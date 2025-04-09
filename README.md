@@ -1,60 +1,82 @@
-# Course Registration CRN Auto-Typer
+# CRN Auto-Typer
 
 **Author:** Aaron Perkel
 
 ## Overview
-This repository contains a Python script that automates the entry of Course Registration Numbers (CRNs) into an online registration form, along with a simulator HTML page for local testing. The Python script, `autocrn.py`, uses the `pyautogui` library to simulate keyboard inputs for entering CRNs and submitting the form. The `simulator.html` file mimics a course registration form, making it easy to test the automation without needing access to the actual registration page.
+This application automates the process of entering Course Registration Numbers (CRNs) into online registration forms. It features a simple GUI for easy operation and uses a text file for flexible CRN configuration.
+
+## Features
+- **User-Friendly GUI**: Simple interface with countdown timer and status updates
+- **Configurable CRN List**: Edit the `crns.txt` file to customize your course registration numbers
+- **Automated Form Navigation**: Automatically tabs between form fields and submits the form
+- **Time-Saving**: Quickly enter multiple CRNs without typing each one manually
 
 ## Repository Structure
-- **autocrn.py** – Python script for automating CRN entry.
-- **simulator.html** – A basic HTML page simulating a registration form for testing purposes.
-- **LICENSE** – MIT License.
-- **README.md** – This file.
+- **src/**
+  - **app.py** - Main application with GUI interface
+  - **typer.py** - Core automation logic for typing CRNs
+  - **reader.py** - Utility for reading CRNs from text file
+  - **crns.txt** - User-editable file containing CRNs to be entered
+  - **simulator.html** - Test page mimicking a registration form
+- **requirements.txt** - Python dependencies
 
-## autocrn.py
-**Purpose:**  
-Automates the process of entering CRNs by simulating keyboard actions.
+## Setup Instructions
 
-**Features:**
-- **Automated CRN Entry:** Simulates typing each CRN.
-- **Form Navigation:** Uses the Tab key to move between text boxes.
-- **Countdown Timer:** Provides a countdown to allow you time to focus the first input field.
-- **Automatic Submission:** Presses Enter to submit the form after all CRNs have been entered.
+### 1. Clone the Repository
+```bash
+git clone https://github.com/aaronperkel/crn-auto-typer.git
+cd crn-auto-typer
+```
 
-**Usage:**
-1. Open your course registration page or use the simulator (see below).
-2. Update the CRN list in the script as needed.
-3. Run the script:
-   ```bash
-   python autocrn.py
-   ```
+### 2. Create a Python Virtual Environment
+```bash
+python3 -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+```
 
-## simulator.html
+### 3. Install Dependencies
+```bash
+pip install --upgrade pip
+pip install -r requirements.txt
+```
 
-**Purpose:**
-Acts as a test interface to simulate a course registration form, allowing you to see how the auto-typer interacts with a form.
+## Usage
 
-**Usage:**
-1. Open simulator.html in your web browser.
-2. Click on the first text box to focus.
-3. Run the autocrn.py script to automatically fill in the CRNs and submit the form.
+### 1. Configure Your CRNs
+Edit the `src/crns.txt` file to include your Course Registration Numbers:
+```
+# Enter your CRNs below, one per line
+# Lines starting with # are ignored
 
-## Prerequisites
-- Python 3.x is required.
-- `pyautogui` Library:
-  ```bash
-  pip install pyautogui
-  ```
-- Pillow Library (Required for some functionalities of pyautogui):
-  ```bash
-  pip install pillow
-  ```
+12345
+67890
+24680
+13579
+```
+
+### 2. Run the Application
+```bash
+python src/app.py
+```
+
+### 3. Using the Auto-Typer
+1. Open your university's course registration page in your browser
+2. Click on the first CRN input field to focus it
+3. Return to the auto-typer application and click "Start"
+4. After the countdown finishes, the application will:
+   - Type each CRN in your list
+   - Navigate between fields with Tab
+   - Submit the form automatically
+
+### Testing with Simulator
+Use the included `simulator.html` to test the functionality:
+1. Open `src/simulator.html` in your web browser
+2. Run the application and follow the steps above
 
 ## Disclaimer
-- University Policy Compliance:
-  - Ensure that using this script does not violate your university’s policies or terms of service.
-- Use at Your Own Risk:
-  - This tool is provided “as is” without any warranty. The author is not responsible for any consequences arising from its use.
+- This tool is intended to save time during course registration and should be used in accordance with your university's policies.
+- The author is not responsible for any unintended consequences of using this application.
+- Test the application with the simulator before using it with your actual registration system.
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

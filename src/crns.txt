@@ -1,0 +1,7 @@
+# Enter your CRNs below, one per line
+# Lines starting with # are ignored
+
+12345
+67890
+24680
+13579
