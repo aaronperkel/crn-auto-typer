@@ -42,16 +42,16 @@ class MyWindow(QWidget):
         else:
             self.timer.stop()
             self.label.setText("Typing...")
-            # Run typer.main() in a separate thread to keep the GUI responsive.
+            # Run typer.typer() in a separate thread to keep the GUI responsive.
             threading.Thread(target=self.run_typer, daemon=True).start()
 
     def run_typer(self):
-        typer.main()  # This might block, so run it in a thread.
+        typer.typer()  # This might block, so run it in a thread.
         # Schedule finishing steps in the main thread.
         QTimer.singleShot(0, self.finish_typing)
 
     def finish_typing(self):
-        self.label.setText("CRNs have been entered and the form has been submitted.")
+        self.label.setText("CRNs have been entered and the form has been submitted.\n\nFollow me on Instagram @aaronperkel")
         self.button.setText("Close")
         self.button.clicked.disconnect()
         self.button.clicked.connect(self.close)
