@@ -39,16 +39,28 @@ Acts as a test interface to simulate a course registration form, allowing you to
 2. Click on the first text box to focus.
 3. Run the autocrn.py script to automatically fill in the CRNs and submit the form.
 
-## Prerequisites
-- Python 3.x is required.
-- `pyautogui` Library:
-  ```bash
-  pip install pyautogui
-  ```
-- Pillow Library (Required for some functionalities of pyautogui):
-  ```bash
-  pip install pillow
-  ```
+## Setup Instructions
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/aaronperkel/crn-auto-typer.git
+cd crn-auto-typer
+```
+
+### 2. Create a Python Virtual Environment
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+### 3. Install Dependencies
+
+```bash
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
 
 ## Disclaimer
 - University Policy Compliance:
