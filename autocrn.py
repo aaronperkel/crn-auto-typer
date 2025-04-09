@@ -18,10 +18,7 @@ DELAY = 3 # 3 second delay before typing starts
 def main():
     # Wait for the user to click on the first text box
     for i in range(DELAY, 0, -1):
-        if i > 1:
-            print(f"Starting in {i} seconds...", end='\r')
-        else:
-            print(f"Starting in {i} second....", end='\r')
+        print(f"Starting in {i} second{'s' if i != 1 else ''}...", end='\r')
         time.sleep(1)
 
     # Type each CRN and press 'Tab' to move to the next text box
