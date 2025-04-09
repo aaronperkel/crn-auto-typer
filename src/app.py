@@ -13,7 +13,7 @@ class MyWindow(QWidget):
         self.resize(400, 200)
         layout = QVBoxLayout()
 
-        self.label = QLabel("Click below to start the auto typer.")
+        self.label = QLabel("Click below to start the auto typer.\n\nOnce you start, CLICK on the first CRN box in the add/drop/withdrawl page.\n\nYou will have 3 seconds to do so before the program begins to type.")
         layout.addWidget(self.label)
 
         self.button = QPushButton("Start")
