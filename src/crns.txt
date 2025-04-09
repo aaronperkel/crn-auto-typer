@@ -1,0 +1,9 @@
+# Enter CRNS in this file separated by a new line. Lines 
+# starting with '#' will be ignored.
+
+# FOR EXAMPLE:
+12007
+12435
+# 15862 <-- this will be ignored because it starts with '#'.
+12568
+12777
