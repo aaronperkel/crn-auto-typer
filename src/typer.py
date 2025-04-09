@@ -11,11 +11,12 @@ import pyautogui
 CRNS = reader.read_crns('./crns.txt')
 
 def typer():
-    # Type each CRN and press 'Tab' to move to the next text box
-    for crn in CRNS:
+    # Iterate over CRNS with index
+    for i, crn in enumerate(CRNS):
         pyautogui.typewrite(crn)
-        pyautogui.press('tab')  # Move to the next text box
-        time.sleep(0.05)  # Small delay for stability
+        if i != len(CRNS) - 1:
+            pyautogui.press('tab')  # Move to the next text box
+            time.sleep(0.05)  # Small delay for stability
 
     # Submit the form by pressing 'Enter'
     pyautogui.press('enter')
