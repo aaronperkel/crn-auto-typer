@@ -1,6 +1,6 @@
 """
 Aaron Perkel
-Course Registration CRN Auto-Typer
+typer.py script
 """
 
 import time
@@ -22,10 +22,6 @@ def main():
 
     # Submit the form by pressing 'Enter'
     pyautogui.press('enter')
-
-    # Prints just for sanity sake
-    for i, crn in enumerate(CRNS):
-        print(f'  {i+1}. {crn[0]} -> {crn[1]}')
         
 if __name__ == '__main__':
     main()
